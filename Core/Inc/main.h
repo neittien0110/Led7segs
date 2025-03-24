@@ -57,6 +57,10 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define BLUE_ENABLED_Pin GPIO_PIN_2
+#define BLUE_ENABLED_GPIO_Port GPIOG
+#define PING_ENABLED_Pin GPIO_PIN_3
+#define PING_ENABLED_GPIO_Port GPIOG
 
 /* USER CODE BEGIN Private defines */
 
