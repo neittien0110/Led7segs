@@ -87,6 +87,13 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
+  HAL_GPIO_WritePin(A_GPIO_Port, A_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(B_GPIO_Port, B_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(C_GPIO_Port, C_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(D_GPIO_Port, D_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(E_GPIO_Port, E_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(F_GPIO_Port, F_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(G_GPIO_Port, G_Pin, GPIO_PIN_RESET);
 
   ///Cho phép led 7-seg màu Ping sáng, bằng cách đưa logic 1 vào chân Base của transistor 2N2222, làm cực cathod của đèn nối liền với GND, thông mạch.
   HAL_GPIO_WritePin(PING_ENABLED_GPIO_Port, PING_ENABLED_Pin, GPIO_PIN_SET);
@@ -160,10 +167,24 @@ static void MX_GPIO_Init(void)
 /* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOE_CLK_ENABLE();
   __HAL_RCC_GPIOG_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOE, A_Pin|B_Pin|C_Pin|D_Pin
+                          |E_Pin|F_Pin|G_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOG, BLUE_ENABLED_Pin|PING_ENABLED_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : A_Pin B_Pin C_Pin D_Pin
+                           E_Pin F_Pin G_Pin */
+  GPIO_InitStruct.Pin = A_Pin|B_Pin|C_Pin|D_Pin
+                          |E_Pin|F_Pin|G_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
   /*Configure GPIO pins : BLUE_ENABLED_Pin PING_ENABLED_Pin */
   GPIO_InitStruct.Pin = BLUE_ENABLED_Pin|PING_ENABLED_Pin;
