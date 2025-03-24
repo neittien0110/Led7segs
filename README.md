@@ -19,4 +19,4 @@
 ## Videos
  - [7seg part1 - check 7-seg leds and transistors are working well ![thumbnail](https://github.com/user-attachments/assets/1c4b962a-4a9f-480f-b005-41f3c8af5352)](https://youtu.be/sPcrocyuKak)
  - [7seg part2 - control transistors to turn off/of 7-seg leds ![image](https://github.com/user-attachments/assets/64c19325-b07b-42d6-a7a7-1709efcb3bc8)](https://youtu.be/DgbDV2A6jI0)
- - [7seg part3 - control transistors and 7-seg. Wiring.](https://youtu.be/NmXTEj0gcd8)
+ - [7seg part3 - control transistors and 7-seg. Wiring. ![image](https://github.com/user-attachments/assets/e7591208-1476-4d9c-ad2c-b342bbeed2c0)](https://youtu.be/NmXTEj0gcd8)
